@@ -1,5 +1,3 @@
-# Laporan Proyek Machine Learning - Siti Fatimatuzzahro
-
 ## **Domain Proyek**
 ![smoke-detector-500x500](https://user-images.githubusercontent.com/99231159/197402111-8e712774-1fde-4906-83a5-0799fa320f45.jpg)
 
