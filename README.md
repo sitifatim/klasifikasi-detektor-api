@@ -15,7 +15,6 @@ Pendeteksi asap adalah sebuah alat yang dapat mendeteksi atau merasakan apabila 
 * Klasifikasi akan dibuat dengan metode dari kecerdasan buatan, yaitu *machine learning* dengan algoritma yang akan digunakan ialah *K-Nearest Neighbor, Support Vector Machine,* dan *Random Forest*.
 
 ## **Data Understanding**
-### Dataset
 Dataset yang akan digunakan ialah dataset "Smoke Detection Dataset" yang dapat diakses melalui situs Kaggle pada link [ini](https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset?datasetId=2424784) yang mana dibuat oleh Stefan Blattman pada proyeknya berjudul [Real-time Smoke Detection with AI-based Sensor Fusion](https://www.hackster.io/stefanblattmann/real-time-smoke-detection-with-ai-based-sensor-fusion-1086e6). Dataset tersebut merupakan data-data yang dikumpulkan oleh sensor detektor asap. Detektor asap adalah perangkat yang mendeteksi asap, biasanya sebagai indikator kebakaran dan berbentuk seperti piringan berdiameter sekitar 150 milimeter (6 inci) dan tebal 25 milimeter (1 inci), tetapi bentuk dan ukurannya bervariasi. Jumlah data yang terkumpul kurang lebih 60.000 data per 1 Hz *sample rate* dengan dilengkapi pula waktu tera UTC agar memudahkan *tracking* data. Beberapa parameter atau variabel yang terkumpul diantaranya adalah sebagai berikut:
 * Fire Alarm adalah fitur target, dengan kode 1 berarti menandakan ada api
 * Temperature adalah suhu dari hasil pengukuran dalam satuan C
@@ -34,16 +33,16 @@ Dataset yang akan digunakan ialah dataset "Smoke Detection Dataset" yang dapat d
 
 ## **Data Preparation**
 Preparasi data yang dilakukan mencakupi tiga tahap yaitu:
-1. Data Cleaning
-   Data Cleaning dimaksudkan untuk mengecek apakah dataset yang dipakai memiliki nilai kosong (null value) atau tidak. Pada dataset Fire Alarm Detection ini tidak terindikasi adanya nilai Null yang dapat dilihat pada gambar 1. 
+#### Data Cleaning
+Data Cleaning dimaksudkan untuk mengecek apakah dataset yang dipakai memiliki nilai kosong (null value) atau tidak. Pada dataset Fire Alarm Detection ini tidak terindikasi adanya nilai Null yang dapat dilihat pada gambar 1. 
    
    ![2022-10-23-21-25-colab research google com](https://user-images.githubusercontent.com/99231159/197401789-24caaa2b-d9d6-4910-ad09-190f160a1215.png)
    
    Berdasarkan gambar 1, maka data tidak perlu dilakukan pembersihan karena tidak ada data yang bernilai null.
-2. Feature Selection
-   Pada bagian ini dilakukan seleksi fitur dimana terdapat fitur inputan dan fitur target. Fitur inputan ialah terdiri dari kolom 2 hingga 15 adalah data numerik dari parameter kebakaran. Kolom 16 adalah fitur target yaitu kolom label Fire Alarm, yang mana disimbolkan 1 dan 0. 1 berartikan ada api *(Fire)* dan 0 berartikan tidak ada api *(No Fire)*
-3. Normalization
-   Data parameter kebakaran akan dinormalisasikan terlebih dahulu. Hal ini dilakukan agar data semua ada pada range nilai yang sama. Metode normalisasi yang digunakan yaitu Standar Scaler dimana metode ini bekerja menormalisasikan data sehingga data akan memiliki nilai rata-rata 0 dan variansi 1. 
+#### Feature Selection
+Pada bagian ini dilakukan seleksi fitur dimana terdapat fitur inputan dan fitur target. Fitur inputan ialah terdiri dari kolom 2 hingga 15 adalah data numerik dari parameter kebakaran. Kolom 16 adalah fitur target yaitu kolom label Fire Alarm, yang mana disimbolkan 1 dan 0. 1 berartikan ada api *(Fire)* dan 0 berartikan tidak ada api *(No Fire)*
+#### Normalization
+Data parameter kebakaran akan dinormalisasikan terlebih dahulu. Hal ini dilakukan agar data semua ada pada range nilai yang sama. Metode normalisasi yang digunakan yaitu Standar Scaler dimana metode ini bekerja menormalisasikan data sehingga data akan memiliki nilai rata-rata 0 dan variansi 1. 
 
 ## **Modeling**
 Tahap ini melakukan modeling pada data. Algoritma yang digunakan yaitu K-Nearest Neighbor, Support Vector Machine, Random Forest. Tiap algoritma memiliki parameter-parameter tersendiri yang dapat diatur sendiri nilainya. Pengaturan parameter tersebut beserta keterangannya dapat dilihat pada tabel 1. 
@@ -63,15 +62,15 @@ Setelah dilakukan training model, hasil akurasi terbaik adalah diperoleh oleh Ra
 
 ## **Evaluation**
 Tahap evaluasi yang dilakukan yaitu ada dua tahap sebgai berikut:
-1. Perbandingan Akurasi
-   Perbandingan akurasi K-Nearest Neighbor, Support Vector Machine, Random Forest didapatkan bahwa Random Forest memiliki akurasi yang tertinggi sebesar 100%. Apapun hasil perbandingan ketiga akurasi model tersebut dapat dilihat pada gambar 2 berikut.
+#### Perbandingan Akurasi
+Perbandingan akurasi K-Nearest Neighbor, Support Vector Machine, Random Forest didapatkan bahwa Random Forest memiliki akurasi yang tertinggi sebesar 100%. Apapun hasil perbandingan ketiga akurasi model tersebut dapat dilihat pada gambar 2 berikut.
    
    ![2022-10-23-22-09-colab research google com](https://user-images.githubusercontent.com/99231159/197401825-d925a5b5-b754-4f6c-b8f8-31746a97a8ed.png)
    
    Gambar 2. Perbandingan Akurasi Model
    
-2. Perbandingan MAE (Mean Absoluter Error)
-   MAE merupakan teknik evaluasi yang dapat digunakan untuk melihat seberapa baik model bekerja. Semakin kecil nilai MAE, maka akan semakin kecil pula kemungkina model melakukan kesalahan saat melakukan prediksi. Hasil perbandingan algoritma K-Nearest Neighbor, Support Vector Machine, Random Forest dapat dilihat pada gambar 3. Dari gambar 3, dapat diihat bahwasanya Random Forest memiliki MAE 0 yang mana artinya tidak memiliki kesalahan prediksi dibandingkan kedua algoritma yang lain. 
+#### Perbandingan MAE (Mean Absoluter Error)
+MAE merupakan teknik evaluasi yang dapat digunakan untuk melihat seberapa baik model bekerja. Semakin kecil nilai MAE, maka akan semakin kecil pula kemungkina model melakukan kesalahan saat melakukan prediksi. Hasil perbandingan algoritma K-Nearest Neighbor, Support Vector Machine, Random Forest dapat dilihat pada gambar 3. Dari gambar 3, dapat diihat bahwasanya Random Forest memiliki MAE 0 yang mana artinya tidak memiliki kesalahan prediksi dibandingkan kedua algoritma yang lain. 
    
    ![2022-10-23-22-22-colab research google com](https://user-images.githubusercontent.com/99231159/197401850-c1598bb9-3956-4077-a2e0-90ab6d02258e.png)
    
