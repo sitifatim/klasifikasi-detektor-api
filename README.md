@@ -1,6 +1,8 @@
 # Laporan Proyek Machine Learning - Siti Fatimatuzzahro
 
 ## **Domain Proyek**
+![smoke-detector-500x500](https://user-images.githubusercontent.com/99231159/197402111-8e712774-1fde-4906-83a5-0799fa320f45.jpg)
+
 Pendeteksi asap adalah sebuah alat yang dapat mendeteksi atau merasakan apabila adanya asap di sekitar. Alat ini biasa digunakan untuk pendeteksi kebakaran atau Fire Alarm Detection. Penggunaan alarm api telah membantu banyak kasus kebakaran yang telah terjadi di dunia [1]. Dengan perkembangan teknologi yang meningkat, hingga saat ini telah banyak inovasi tentang perkembangan alarm kebakaran yaitu dengan menggabungkan kecerdasan buatan pada klasifikasi data-data yang ditangkap oleh sensor asap. Sensor asap mendeteksi beberapa parameter untuk pengindikasian terdapatnya asap atau api di sekitar seperti *humidity, temperature, raw H2,* dan lainnya. Data-data yang dikumpulkan seringkali ratusan hingga puluhan ribu yang mana tidak efektif jika dilakukan pengamatan manual. Oleh karena itu diperlukannya sebuah klasifikasi untuk mengklasifikasikan parameter-parameter tersebut agar dapat membantu pendeteksian kebakaran. Kecerdasan buatan memiliki keuntungan yaitu dapat menangkap pola pada data dengan jumlah besar [2]. Oleh karena klasifikasi parameter kebakaran perlu dibuat dengan kecerdasan buatan.
 
 ## **Business Understanding**
@@ -14,7 +16,7 @@ Pendeteksi asap adalah sebuah alat yang dapat mendeteksi atau merasakan apabila 
 
 ## **Data Understanding**
 ### Dataset
-Dataset yang akan digunakan ialah dataset "Smoke Detection Dataset" yang dapat diakses melalui situs Kaggle pada link [ini](https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset?datasetId=2424784) yang mana dibuat oleh Stefan Blattman pada proyeknya berjudul [Real-time Smoke Detection with AI-based Sensor Fusion](https://www.hackster.io/stefanblattmann/real-time-smoke-detection-with-ai-based-sensor-fusion-1086e6) [3]. Dataset tersebut merupakan data-data yang dikumpulkan oleh sensor detektor asap. Detektor asap adalah perangkat yang mendeteksi asap, biasanya sebagai indikator kebakaran dan berbentuk seperti piringan berdiameter sekitar 150 milimeter (6 inci) dan tebal 25 milimeter (1 inci), tetapi bentuk dan ukurannya bervariasi. Jumlah data yang terkumpul kurang lebih 60.000 data per 1 Hz *sample rate* dengan dilengkapi pula waktu tera UTC agar memudahkan *tracking* data. Beberapa parameter atau variabel yang terkumpul diantaranya adalah sebagai berikut:
+Dataset yang akan digunakan ialah dataset "Smoke Detection Dataset" yang dapat diakses melalui situs Kaggle pada link [ini](https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset?datasetId=2424784) yang mana dibuat oleh Stefan Blattman pada proyeknya berjudul [Real-time Smoke Detection with AI-based Sensor Fusion](https://www.hackster.io/stefanblattmann/real-time-smoke-detection-with-ai-based-sensor-fusion-1086e6). Dataset tersebut merupakan data-data yang dikumpulkan oleh sensor detektor asap. Detektor asap adalah perangkat yang mendeteksi asap, biasanya sebagai indikator kebakaran dan berbentuk seperti piringan berdiameter sekitar 150 milimeter (6 inci) dan tebal 25 milimeter (1 inci), tetapi bentuk dan ukurannya bervariasi. Jumlah data yang terkumpul kurang lebih 60.000 data per 1 Hz *sample rate* dengan dilengkapi pula waktu tera UTC agar memudahkan *tracking* data. Beberapa parameter atau variabel yang terkumpul diantaranya adalah sebagai berikut:
 * Fire Alarm adalah fitur target, dengan kode 1 berarti menandakan ada api
 * Temperature adalah suhu dari hasil pengukuran dalam satuan C
 * Humidity adalah kelembaban dalam satuan %
@@ -79,3 +81,7 @@ Dari perbandingan yang sudah dilakukan dapat dilihat bahwa algoritma Random Fore
 * Random Forest
 * Support Vector Machine
 * K-Nearest Neighbor
+
+## **References**
+[1] Stanley Gilbert, "Estimating Smoke Detector Effectiveness and Utilization in Homes", National Institute of Standards and Technology, 2018.
+[2] Dr. Suryanto, "Data Mining untuk Klasifikasi dan Klasterisasi Data", Informatika Bandung, 2017. 
